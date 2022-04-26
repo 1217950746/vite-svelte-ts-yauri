@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "npm",
+            "label": "test",
+            "script": "dev"
+        },
+        {
+            "type": "npm",
+            "label": "run",
+            "script": "tauri_dev"
+        },
+        {
+            "type": "npm",
+            "label": "build",
+            "script": "tauri_build"
+        }
+    ]
+}
