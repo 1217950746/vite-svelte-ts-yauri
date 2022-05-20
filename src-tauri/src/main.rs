@@ -16,5 +16,13 @@ fn main() {
 
 fn setup(app: &App) {
     let window = app.get_window("main").unwrap();
-    let _ = set_shadow(&window, true);
+    #[cfg(target_os = "windows")]
+    {
+        let _ = set_shadow(&window, true);
+    }
+
+    #[cfg(target_os = "macos")]
+    {
+        window.set_decorations(true)
+    }
 }
