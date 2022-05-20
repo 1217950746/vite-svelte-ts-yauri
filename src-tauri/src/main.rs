@@ -3,8 +3,18 @@
     windows_subsystem = "windows"
 )]
 
+use tauri::App;
+use tauri::Manager;
+use window_shadows::set_shadow;
+
 fn main() {
     tauri::Builder::default()
+        .setup(|app| Ok(setup(app)))
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
+}
+
+fn setup(app: &App) {
+    let window = app.get_window("main").unwrap();
+    let _ = set_shadow(&window, true);
 }

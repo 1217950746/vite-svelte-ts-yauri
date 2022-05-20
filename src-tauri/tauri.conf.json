@@ -56,6 +56,7 @@
                 "height": 768,
                 "resizable": true,
                 "center": true,
+                "decorations": false,
                 "fullscreen": false
             }
         ],
