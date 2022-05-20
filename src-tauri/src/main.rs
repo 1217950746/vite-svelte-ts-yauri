@@ -5,7 +5,6 @@
 
 use tauri::App;
 use tauri::Manager;
-use window_shadows::set_shadow;
 
 fn main() {
     tauri::Builder::default()
@@ -18,11 +17,12 @@ fn setup(app: &App) {
     let window = app.get_window("main").unwrap();
     #[cfg(target_os = "windows")]
     {
+        use window_shadows::set_shadow;
         let _ = set_shadow(&window, true);
     }
 
     #[cfg(target_os = "macos")]
     {
-        window.set_decorations(true)
+       let _ = window.set_decorations(true);
     }
 }
