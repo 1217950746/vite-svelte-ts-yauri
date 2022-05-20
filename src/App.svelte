@@ -7,7 +7,7 @@
     import AppContent from "./AppContent.svelte";
 
     document.body.className =
-        "antialiased bg-white text-slate-600 text-base select-none w-screen h-screen";
+        "antialiased bg-white text-slate-600 text-base select-none w-screen h-screen overflow-hidden";
 
     if (import.meta.env.DEV !== true)
         document.body.addEventListener("contextmenu", (e) =>
